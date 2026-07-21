@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hinoko Labs</title>
+<meta name="description" content="Hinoko Labs is a Japan-based collective building AI agents — Homu and Kairo.">
+<link rel="icon" type="image/png" href="assets/hinoko-favicon.png" sizes="256x256">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="brand" aria-label="Hinoko Labs home">
+      <img class="brand-mark" src="assets/hinoko-logo.png" alt="">
+      <span class="brand-name">Hinoko&nbsp;Labs</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main">
+      <a href="#about"><span data-en="About" data-ja="私たちについて">About</span></a>
+      <a href="#products"><span data-en="Products" data-ja="プロダクト">Products</span></a>
+      <a href="#join"><span data-en="Join" data-ja="仲間募集">Join</span></a>
+      <a href="#contact"><span data-en="Contact" data-ja="連絡先">Contact</span></a>
+    </nav>
+
+    <div class="header-right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
+        <span class="lang-sep" aria-hidden="true">/</span>
+        <button type="button" class="lang-btn" data-lang="ja">JA</button>
+      </div>
+      <a href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener" class="btn btn-ink header-cta" data-en="Work with us" data-ja="一緒につくる">Work with us</a>
+      <button type="button" class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" hidden>
+  <nav aria-label="Mobile">
+    <a href="#about"><span data-en="About" data-ja="私たちについて">About</span></a>
+    <a href="#products"><span data-en="Products" data-ja="プロダクト">Products</span></a>
+    <a href="#join"><span data-en="Join" data-ja="仲間募集">Join</span></a>
+    <a href="#contact"><span data-en="Contact" data-ja="連絡先">Contact</span></a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
+      <span class="lang-sep" aria-hidden="true">/</span>
+      <button type="button" class="lang-btn" data-lang="ja">JA</button>
+    </div>
+    <a class="mobile-menu-mail" href="mailto:hello@hinokolabs.org">hello@hinokolabs.org</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-meta hero-anim">
+        <span data-en="Japan" data-ja="日本">Japan</span>
+        <span class="hero-meta-dot" aria-hidden="true"></span>
+        <span data-en="Est. 2026" data-ja="2026年設立">Est. 2026</span>
+      </p>
+
+      <h1 class="hero-title" id="heroTitle">
+        <span class="line"><span class="line-inner"
+          data-en="Hinoko Labs <span class=&quot;hero-chip&quot;><video autoplay muted loop playsinline preload=&quot;metadata&quot; poster=&quot;assets/hinoko-fire-poster.jpg&quot; src=&quot;assets/hinoko-fire.mp4&quot;></video></span>"
+          data-ja="Hinoko Labs <span class=&quot;hero-chip&quot;><video autoplay muted loop playsinline preload=&quot;metadata&quot; poster=&quot;assets/hinoko-fire-poster.jpg&quot; src=&quot;assets/hinoko-fire.mp4&quot;></video></span>は、">Hinoko Labs <span class="hero-chip"><video autoplay muted loop playsinline preload="metadata" poster="assets/hinoko-fire-poster.jpg" src="assets/hinoko-fire.mp4"></video></span></span></span>
+        <span class="line"><span class="line-inner"
+          data-en="builds AI agents<span class=&quot;hero-logos&quot;><img src=&quot;assets/homu-logo.png&quot; alt=&quot;Homu&quot; class=&quot;hero-logo hero-logo--homu&quot;><img src=&quot;assets/kairo-logo.png&quot; alt=&quot;Kairo&quot; class=&quot;hero-logo hero-logo--kairo&quot;></span>"
+          data-ja="AIエージェント<span class=&quot;hero-logos&quot;><img src=&quot;assets/homu-logo.png&quot; alt=&quot;Homu&quot; class=&quot;hero-logo hero-logo--homu&quot;><img src=&quot;assets/kairo-logo.png&quot; alt=&quot;Kairo&quot; class=&quot;hero-logo hero-logo--kairo&quot;></span>を、">builds AI agents<span class="hero-logos"><img src="assets/homu-logo.png" alt="Homu" class="hero-logo hero-logo--homu"><img src="assets/kairo-logo.png" alt="Kairo" class="hero-logo hero-logo--kairo"></span></span></span>
+        <span class="line"><span class="line-inner"
+          data-en="<em>from Japan<span class=&quot;hero-tokyo&quot;><video autoplay muted loop playsinline preload=&quot;metadata&quot; src=&quot;assets/tokyo_pingpong.mp4&quot;></video></span>.</em>"
+          data-ja="つくる。<em>日本<span class=&quot;hero-tokyo&quot;><video autoplay muted loop playsinline preload=&quot;metadata&quot; src=&quot;assets/tokyo_pingpong.mp4&quot;></video></span>から。</em>"><em>from Japan<span class="hero-tokyo"><video autoplay muted loop playsinline preload="metadata" src="assets/tokyo_pingpong.mp4"></video></span>.</em></span></span>
+      </h1>
+
+      <div class="hero-foot hero-anim">
+        <p class="hero-sub"
+           data-en="A small independent collective of engineers and designers. We make tools that don’t just complete your line — they finish the work."
+           data-ja="エンジニアとデザイナーによる、小さな独立系チームです。行を補完するだけでなく、仕事を最後まで終わらせる道具をつくっています。">A small independent collective of engineers and designers. We make tools that don’t just complete your line — they finish the work.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-ink" data-en="See the products" data-ja="プロダクトを見る">See the products</a>
+          <a href="#join" class="btn btn-line" data-en="Join the team" data-ja="仲間になる">Join the team</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Homu</span><i>✦</i><span>Kairo</span><i>✦</i>
+        <span>Coding Agents</span><i>✦</i><span>Japan</span><i>✦</i>
+        <span>Hinoko Labs</span><i>✦</i><span>Independent</span><i>✦</i><span>Est. 2026</span><i>✦</i>
+        <span>Homu</span><i>✦</i><span>Kairo</span><i>✦</i>
+        <span>Coding Agents</span><i>✦</i><span>Japan</span><i>✦</i>
+        <span>Hinoko Labs</span><i>✦</i><span>Independent</span><i>✦</i><span>Est. 2026</span><i>✦</i>
+        <span>Homu</span><i>✦</i><span>Kairo</span><i>✦</i>
+        <span>Coding Agents</span><i>✦</i><span>Japan</span><i>✦</i>
+        <span>Hinoko Labs</span><i>✦</i><span>Independent</span><i>✦</i><span>Est. 2026</span><i>✦</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-index">01</span>
+        <h2 class="section-label" data-en="About" data-ja="私たちについて">About</h2>
+      </div>
+
+      <p class="manifesto">
+        <span class="reveal-line" data-en="Most tools complete the line you’re typing." data-ja="多くのツールは、いま打っている行を補完するだけ。">Most tools complete the line you’re typing.</span>
+        <span class="reveal-line" data-en="We build the ones that <span class=&quot;accent&quot;>finish the work.</span>" data-ja="私たちは、<span class=&quot;accent&quot;>仕事を終わらせる道具</span>をつくる。">We build the ones that <span class="accent">finish the work.</span></span>
+      </p>
+
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p data-en="Hinoko Labs is an independent collective based in Japan. No office, no investors, no deadlines set by anyone but us. We are engineers, designers and researchers who build the tools we want to use ourselves — and ship them when they’re genuinely ready."
+             data-ja="Hinoko Labs は、日本を拠点とする独立系のものづくり集団です。オフィスも、投資家も、誰かに課された締め切りもありません。自分たちが本当に使いたい道具を、エンジニア・デザイナー・リサーチャーが自らの手でつくり、納得できたときに世に出します。">Hinoko Labs is an independent collective based in Japan. No office, no investors, no deadlines set by anyone but us. We are engineers, designers and researchers who build the tools we want to use ourselves — and ship them when they’re genuinely ready.</p>
+          <p data-en="Right now everything we do orbits one question: what does work look like when software can do the work? Our answer so far is two products — Homu and Kairo — built in the open, side by side."
+             data-ja="いま私たちが向き合っているのは、ただひとつの問い。「ソフトウェアが仕事をこなせるとき、働き方はどう変わるのか」。その答えとして、Homu と Kairo というふたつのプロダクトを並行して育てています。">Right now everything we do orbits one question: what does work look like when software can do the work? Our answer so far is two products — Homu and Kairo — built in the open, side by side.</p>
+        </div>
+
+        <dl class="about-facts reveal">
+          <div class="fact">
+            <dt data-en="Base" data-ja="拠点">Base</dt>
+            <dd data-en="Japan" data-ja="日本">Japan</dd>
+          </div>
+          <div class="fact">
+            <dt data-en="Structure" data-ja="形態">Structure</dt>
+            <dd data-en="Independent collective" data-ja="任意団体">Independent collective</dd>
+          </div>
+          <div class="fact">
+            <dt data-en="Focus" data-ja="領域">Focus</dt>
+            <dd data-en="AI agents" data-ja="AIエージェント">AI agents</dd>
+          </div>
+          <div class="fact">
+            <dt data-en="Products" data-ja="プロダクト">Products</dt>
+            <dd>Homu / Kairo</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="principles">
+        <div class="principle reveal">
+          <span class="principle-num">a</span>
+          <h3 data-en="Ship what we’d use" data-ja="自分が使うものを出す">Ship what we’d use</h3>
+          <p data-en="Every feature starts as something one of us wanted yesterday. If we wouldn’t reach for it daily, it doesn’t ship."
+             data-ja="すべての機能は「昨日これが欲しかった」から始まります。自分たちが毎日手に取らないものは、出しません。">Every feature starts as something one of us wanted yesterday. If we wouldn’t reach for it daily, it doesn’t ship.</p>
+        </div>
+        <div class="principle reveal">
+          <span class="principle-num">b</span>
+          <h3 data-en="The human stays in charge" data-ja="主導権は人にある">The human stays in charge</h3>
+          <p data-en="Agents plan, write and test. You review, decide and commit. That boundary is a feature, not a limitation."
+             data-ja="計画し、書き、テストするのはエージェント。レビューし、判断し、コミットするのは人。この線引きは制約ではなく、設計です。">Agents plan, write and test. You review, decide and commit. That boundary is a feature, not a limitation.</p>
+        </div>
+        <div class="principle reveal">
+          <span class="principle-num">c</span>
+          <h3 data-en="Small sparks, big fires" data-ja="小さな火花が、次の火に">Small sparks, big fires</h3>
+          <p data-en="Hinoko means the sparks that drift up from a fire, small enough to miss and enough to start the next one. That’s our theory of tools."
+             data-ja="炎から舞い上がる小さな火花。見落とすほど小さく、それでも次の火を起こすには十分。それが、私たちの道具論です。">Hinoko means the sparks that drift up from a fire, small enough to miss and enough to start the next one. That’s our theory of tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Products ===== -->
+  <section class="section products" id="products">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-index">02</span>
+        <h2 class="section-label" data-en="Products" data-ja="プロダクト">Products</h2>
+        <p class="section-note" data-en="Two tools, one obsession — work that actually gets finished." data-ja="ふたつの道具、ひとつのこだわり。仕事が本当に終わるかどうか。">Two tools, one obsession — work that actually gets finished.</p>
+      </div>
+
+      <!-- Homu -->
+      <article class="product reveal">
+        <div class="product-visual product-visual--homu">
+          <img src="assets/homu-logo.png" alt="Homu logo" class="product-logo product-logo--homu">
+        </div>
+        <div class="product-body">
+          <header class="product-head">
+            <h3 class="product-name">Homu</h3>
+            <span class="status-tag" data-en="In development" data-ja="開発中">In development</span>
+          </header>
+          <p class="product-type" data-en="Real-world task agent" data-ja="実世界タスクエージェント">Real-world task agent</p>
+          <p class="product-desc"
+             data-en="Homu takes a task from plain words to a finished deliverable. It drafts the document, builds the deck, runs the research and assembles the report — then hands you something you can actually use. You describe the outcome; Homu does the work."
+             data-ja="Homu は、自然言語のタスクを完成した成果物に変えます。ドキュメントを書き、スライドを組み、リサーチを回し、レポートをまとめる。最後に届くのは、すぐに使える成果物です。あなたは結果を伝えるだけ。手を動かすのは Homu です。">Homu takes a task from plain words to a finished deliverable. It drafts the document, builds the deck, runs the research and assembles the report — then hands you something you can actually use. You describe the outcome; Homu does the work.</p>
+          <ul class="product-points">
+            <li data-en="Handles real-world work — docs, decks, research, reports" data-ja="実世界の作業を担う — ドキュメント・スライド・リサーチ・レポート">Handles real-world work — docs, decks, research, reports</li>
+            <li data-en="Plans, drafts and refines before it reports back" data-ja="計画・起草・推敲を終えてから報告">Plans, drafts and refines before it reports back</li>
+            <li data-en="Every deliverable arrives ready to use" data-ja="成果物はいつでもすぐ使える状態で届く">Every deliverable arrives ready to use</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Kairo -->
+      <article class="product product--flip reveal">
+        <div class="product-visual product-visual--kairo">
+          <img src="assets/kairo-logo.png" alt="Kairo logo" class="product-logo product-logo--kairo">
+        </div>
+        <div class="product-body">
+          <header class="product-head">
+            <h3 class="product-name">Kairo</h3>
+            <span class="status-tag" data-en="In development" data-ja="開発中">In development</span>
+          </header>
+          <p class="product-type" data-en="In-editor coding agent" data-ja="エディタ内コーディングエージェント">In-editor coding agent</p>
+          <p class="product-desc"
+             data-en="Kairo works next to you, inside the editor. It completes, refactors and explains code in place, at the speed of thought — while you stay in charge of every commit. Where Homu runs ahead, Kairo keeps pace."
+             data-ja="Kairo は、エディタの中であなたの隣で働きます。その場で補完し、リファクタリングし、コードを説明する。思考のスピードで。コミットの主導権は、常にあなたの手に。先を走る Homu に対して、Kairo は歩幅を合わせる相棒です。">Kairo works next to you, inside the editor. It completes, refactors and explains code in place, at the speed of thought — while you stay in charge of every commit. Where Homu runs ahead, Kairo keeps pace.</p>
+          <ul class="product-points">
+            <li data-en="Inline completion, refactoring and explanation" data-ja="インライン補完・リファクタリング・コード解説">Inline completion, refactoring and explanation</li>
+            <li data-en="Lives in your editor — no context switching" data-ja="エディタから離れない、コンテキストスイッチゼロ">Lives in your editor — no context switching</li>
+            <li data-en="You own every commit, always" data-ja="コミットの決定権は常にあなたに">You own every commit, always</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Join ===== -->
+  <section class="section join" id="join">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-index">03</span>
+        <h2 class="section-label" data-en="Join" data-ja="仲間募集">Join</h2>
+      </div>
+
+      <div class="join-intro reveal">
+        <h3 class="join-title"
+            data-en="Build one big thing, together."
+            data-ja="みんなで、ひとつの大きなものを。">Build one big thing, together.</h3>
+        <p class="join-text"
+           data-en="We’re not a company, so we can’t pay you — what we can offer is a small, serious team shipping one ambitious product together. If you want your work to matter more than your title, we’d love to hear from you."
+           data-ja="私たちは企業ではないため、報酬をお支払いすることはできません。その代わりにあるのは、小さくても本気のチームと、みんなでまとまってつくり上げるひとつの大きなプロダクト。肩書きより、つくるものそのものに向き合いたい方を待っています。">We’re not a company, so we can’t pay you — what we can offer is a small, serious team shipping one ambitious product together. If you want your work to matter more than your title, we’d love to hear from you.</p>
+      </div>
+
+      <ul class="role-list">
+        <li class="reveal"><a class="role-row" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
+          <span class="role-num">01</span>
+          <span class="role-name" data-en="Web Designer" data-ja="ウェブデザイナー">Web Designer</span>
+          <span class="role-note" data-en="Interfaces people enjoy living in" data-ja="毎日使いたくなる画面をつくる">Interfaces people enjoy living in</span>
+          <span class="role-arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li class="reveal"><a class="role-row" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
+          <span class="role-num">02</span>
+          <span class="role-name" data-en="Brand Designer" data-ja="ブランドデザイナー">Brand Designer</span>
+          <span class="role-note" data-en="Give Hinoko a voice and a face" data-ja="Hinoko の顔と声をつくる">Give Hinoko a voice and a face</span>
+          <span class="role-arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li class="reveal"><a class="role-row" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
+          <span class="role-num">03</span>
+          <span class="role-name" data-en="Web Engineer" data-ja="Webエンジニア">Web Engineer</span>
+          <span class="role-note" data-en="From frontend polish to backend plumbing" data-ja="フロントの磨き込みからバックエンドまで">From frontend polish to backend plumbing</span>
+          <span class="role-arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li class="reveal"><a class="role-row" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
+          <span class="role-num">04</span>
+          <span class="role-name" data-en="macOS / iOS Engineer" data-ja="macOS・iOSアプリエンジニア">macOS / iOS Engineer</span>
+          <span class="role-note" data-en="Native apps that feel at home on Apple platforms" data-ja="Apple プラットフォームに馴染むネイティブアプリ">Native apps that feel at home on Apple platforms</span>
+          <span class="role-arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li class="reveal"><a class="role-row" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
+          <span class="role-num">05</span>
+          <span class="role-name" data-en="Android Engineer" data-ja="Androidアプリエンジニア">Android Engineer</span>
+          <span class="role-note" data-en="Bring the agents to every pocket" data-ja="エージェントをすべてのポケットへ">Bring the agents to every pocket</span>
+          <span class="role-arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li class="reveal"><a class="role-row role-row--special" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
+          <span class="role-num">06</span>
+          <span class="role-name" data-en="Vibe Coder" data-ja="バイブコーダー">Vibe Coder</span>
+          <span class="role-note" data-en="Possibly an industry first — build with agents, full time" data-ja="おそらく業界初。エージェントと共につくる専任職">Possibly an industry first — build with agents, full time</span>
+          <span class="role-arrow" aria-hidden="true">→</span>
+        </a></li>
+      </ul>
+
+      <div class="join-cta reveal">
+        <a href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener" class="btn btn-ink btn-lg" data-en="Apply via the form" data-ja="フォームから応募する">Apply via the form</a>
+        <p class="join-cta-note" data-en="One form for every role — takes about five minutes." data-ja="どの職種も同じフォームから。所要時間は5分ほどです。">One form for every role — takes about five minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-index">04</span>
+        <h2 class="section-label" data-en="Contact" data-ja="連絡先">Contact</h2>
+      </div>
+      <div class="contact-body reveal">
+        <p class="contact-text"
+           data-en="Questions about our work, the products, or anything else — write to us. A human reads every message."
+           data-ja="活動のこと、プロダクトのこと、それ以外のことでも。メッセージはすべて、人間が読んでいます。">Questions about our work, the products, or anything else — write to us. A human reads every message.</p>
+        <a href="mailto:hello@hinokolabs.org" class="contact-mail"><span>hello@hinokolabs.org</span><i aria-hidden="true">↗</i></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="footer-media" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="metadata"
+           poster="assets/hinoko-fire-poster.jpg"
+           src="assets/hinoko-fire.mp4"></video>
+    <div class="footer-shade"></div>
+  </div>
+
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-statement">
+        <p class="footer-line"
+           data-en="We make small tools that change how software gets written."
+           data-ja="<span class=&quot;nowrap&quot;>ソフトウェアの書かれ方を変える、</span><br>小さな道具をつくっています。">We make small tools that change how software gets written.</p>
+        <a href="mailto:hello@hinokolabs.org" class="btn btn-solid footer-cta" data-en="Get in touch" data-ja="連絡する">Get in touch</a>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-col-head" data-en="Navigate" data-ja="ナビゲーション">Navigate</p>
+          <a href="#about" data-en="About" data-ja="私たちについて">About</a>
+          <a href="#products" data-en="Products" data-ja="プロダクト">Products</a>
+          <a href="#join" data-en="Join" data-ja="仲間募集">Join</a>
+          <a href="#contact" data-en="Contact" data-ja="連絡先">Contact</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-head" data-en="Products" data-ja="プロダクト">Products</p>
+          <a href="#products">Homu</a>
+          <a href="#products">Kairo</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-head" data-en="Connect" data-ja="つながる">Connect</p>
+          <a href="#" rel="noopener">GitHub</a>
+          <a href="#" rel="noopener">X</a>
+          <a href="mailto:hello@hinokolabs.org">Email</a>
+        </div>
+        <button type="button" class="to-top" id="toTop" aria-label="Back to top">↑</button>
+      </div>
+    </div>
+
+    <div class="footer-wordmark-row">
+      <img class="footer-flame" src="assets/hinoko-logo.png" alt="">
+      <p class="footer-wordmark" aria-hidden="true">Hinoko&nbsp;Labs</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p data-en="© 2026 Hinoko Labs, Japan." data-ja="© 2026 Hinoko Labs — 日本">© 2026 Hinoko Labs, Japan.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
