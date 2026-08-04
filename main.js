@@ -50,7 +50,8 @@
 
   var saved = null;
   try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
-  setLang(saved === "ja" ? "ja" : "en");
+  // Japanese is the default; keep an explicitly saved English preference.
+  setLang(saved === "en" ? "en" : "ja");
 
   document.addEventListener("click", function (ev) {
     var btn = ev.target.closest ? ev.target.closest(".lang-btn") : null;
