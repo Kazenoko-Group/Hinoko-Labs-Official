@@ -174,12 +174,6 @@ html[lang="ja"] :is(.hero-title, .manifesto, .join-title, .product-desc,
 
 .header-right { margin-left: auto; display: flex; align-items: center; gap: 20px; }
 
-.lang-toggle { display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 500; }
-.lang-btn { color: var(--ink-50); padding: 4px 2px; letter-spacing: 0.05em; transition: color 0.2s ease; }
-.lang-btn:hover { color: var(--ink); }
-.lang-btn.is-active { color: var(--orange); }
-.lang-sep { color: var(--ink-30); }
-
 .header-cta { padding: 10px 22px; }
 
 .menu-btn { display: none; flex-direction: column; gap: 6px; padding: 8px; }
@@ -788,7 +782,6 @@ html[lang="ja"] .join-title { line-height: 1.45; }
 @media (max-width: 1023px) {
   .main-nav { display: none; }
   .header-cta { display: none; }
-  .site-header .lang-toggle { display: none; }
   .menu-btn { display: flex; }
 }
 

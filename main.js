@@ -3,8 +3,6 @@
 (function () {
   "use strict";
 
-  var STORAGE_KEY = "hinoko-lang";
-
   /* ---------- Helpers ---------- */
   function playVideos(scope) {
     (scope || document).querySelectorAll("video").forEach(function (video) {
@@ -13,8 +11,7 @@
     });
   }
 
-  /* Wrap manifesto lines in an inner span so they can slide up from a mask.
-     Needs to re-run after every language swap (innerHTML gets replaced). */
+  /* Wrap manifesto lines in an inner span so they can slide up from a mask. */
   function wrapManifestoLines() {
     document.querySelectorAll(".manifesto .reveal-line").forEach(function (line, i) {
       if (line.querySelector(".rl-inner")) return;
@@ -26,37 +23,7 @@
     });
   }
 
-  /* ---------- Language toggle (innerHTML: data attrs may contain markup) ---------- */
-  function setLang(lang) {
-    var nodes = document.querySelectorAll("[data-en][data-ja]");
-    for (var i = 0; i < nodes.length; i++) {
-      var el = nodes[i];
-      el.innerHTML = lang === "ja" ? el.getAttribute("data-ja") : el.getAttribute("data-en");
-    }
-    document.documentElement.setAttribute("lang", lang);
-    document.title = lang === "ja"
-      ? "Hinoko Labs — 日本でつくるAIエージェント"
-      : "Hinoko Labs — AI agents, built in Japan";
-
-    var buttons = document.querySelectorAll(".lang-btn");
-    for (var j = 0; j < buttons.length; j++) {
-      buttons[j].classList.toggle("is-active", buttons[j].getAttribute("data-lang") === lang);
-    }
-
-    wrapManifestoLines();
-    playVideos();
-    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
-  }
-
-  var saved = null;
-  try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
-  // Japanese is the default; keep an explicitly saved English preference.
-  setLang(saved === "en" ? "en" : "ja");
-
-  document.addEventListener("click", function (ev) {
-    var btn = ev.target.closest ? ev.target.closest(".lang-btn") : null;
-    if (btn) setLang(btn.getAttribute("data-lang"));
-  });
+  wrapManifestoLines();
 
   /* ---------- Header state on scroll ---------- */
   var header = document.getElementById("siteHeader");
