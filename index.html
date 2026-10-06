@@ -1,328 +1,184 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hinoko Labs — 日本でつくるAIエージェント</title>
-<meta name="description" content="Hinoko Labs は日本を拠点とする独立系チーム。AIエージェント Homu と Kairo を開発しています。">
-<link rel="icon" type="image/png" href="assets/hinoko-favicon.png" sizes="256x256">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Hinoko Labs</title>
+  <meta name="description" content="Hinoko Labsは、日本を拠点とする独立系のAI開発チームです。エンジニア、デザイナー、リサーチャーが集まり、AIを使ったソフトウェアを開発しています。">
+  <link rel="icon" type="image/png" href="assets/hinoko-favicon.png">
+  <link rel="preload" href="assets/fonts/geist-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
 
-<!-- ===== Header ===== -->
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <a href="#top" class="brand" aria-label="Hinoko Labs トップへ">
-      <img class="brand-mark" src="assets/hinoko-logo.png" alt="">
-      <span class="brand-name">Hinoko&nbsp;Labs</span>
-    </a>
-
-    <nav class="main-nav" aria-label="メインメニュー">
+  <header class="site-header">
+    <div class="header-inner container">
+      <a class="brand" href="#top" aria-label="Hinoko Labs トップ">
+        <img src="assets/hinoko-logo-small.png" width="13" height="21" alt="">
+        <span>Hinoko Labs</span>
+      </a>
+      <nav class="nav" aria-label="メイン">
+        <a href="#values">価値観</a>
+        <a href="#about">私たちについて</a>
+        <a href="#careers">仲間募集</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+      <div class="header-actions">
+        <a class="button button-dark header-contact" href="mailto:hellohinokolabs@miho.uk">お問い合わせ</a>
+        <a class="button header-join" href="#careers">参加する</a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="メニューを開く">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileMenu" aria-label="モバイル" hidden>
+      <a href="#values">価値観</a>
       <a href="#about">私たちについて</a>
-      <a href="#products">プロダクト</a>
-      <a href="#join">仲間募集</a>
-      <a href="#contact">連絡先</a>
+      <a href="#careers">仲間募集</a>
+      <a href="#contact">お問い合わせ</a>
     </nav>
+  </header>
 
-    <div class="header-right">
-      <a href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener" class="btn btn-ink header-cta">一緒につくる</a>
-      <button type="button" class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu" hidden>
-  <nav aria-label="モバイルメニュー">
-    <a href="#about">私たちについて</a>
-    <a href="#products">プロダクト</a>
-    <a href="#join">仲間募集</a>
-    <a href="#contact">連絡先</a>
-  </nav>
-  <div class="mobile-menu-foot">
-    <a class="mobile-menu-mail" href="mailto:hellohinokolabs@miho.uk">hellohinokolabs@miho.uk</a>
-  </div>
-</div>
-
-<main id="top">
-
-  <!-- ===== Hero ===== -->
-  <section class="hero">
-    <div class="hero-inner">
-      <p class="hero-meta hero-anim">
-        <span>日本</span>
-        <span class="hero-meta-dot" aria-hidden="true"></span>
-        <span>2026年設立</span>
-      </p>
-
-      <h1 class="hero-title" id="heroTitle">
-        <span class="line"><span class="line-inner">Hinoko Labs <span class="hero-chip"><video autoplay muted loop playsinline preload="metadata" poster="assets/hinoko-fire-poster.jpg" src="assets/hinoko-fire.mp4"></video></span>は、</span></span>
-        <span class="line"><span class="line-inner">AIエージェント<span class="hero-logos"><img src="assets/homu-logo.png" alt="Homu" class="hero-logo hero-logo--homu"><img src="assets/kairo-logo.png" alt="Kairo" class="hero-logo hero-logo--kairo"></span>を、</span></span>
-        <span class="line"><span class="line-inner">つくる。<em>日本<span class="hero-tokyo"><video autoplay muted loop playsinline preload="metadata" src="assets/tokyo_pingpong.mp4"></video></span>から。</em></span></span>
-      </h1>
-
-      <div class="hero-foot hero-anim">
-        <p class="hero-sub">エンジニアとデザイナーによる、小さな独立系チームです。行を補完するだけでなく、仕事を最後まで終わらせる道具をつくっています。</p>
-        <div class="hero-actions">
-          <a href="#products" class="btn btn-ink">プロダクトを見る</a>
-          <a href="#join" class="btn btn-line">仲間になる</a>
+  <main id="main" tabindex="-1">
+    <section class="hero container" id="top" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="kicker">私たちのミッション</p>
+        <h1 id="heroTitle">仕事を任せられる<br>AIを、日本から。</h1>
+        <p class="lead">Hinoko Labsは、日本を拠点とする独立系のAI開発チームです。エンジニア、デザイナー、リサーチャーが集まり、自分たちが毎日使いたいソフトウェアをつくっています。</p>
+        <div class="actions">
+          <a class="button button-large" href="#careers">参加する</a>
+          <a class="button button-large button-dark" href="#contact">お問い合わせ</a>
         </div>
       </div>
-    </div>
-
-    <div class="hero-ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>Homu</span><i>✦</i><span>Kairo</span><i>✦</i>
-        <span>コーディングエージェント</span><i>✦</i><span>日本</span><i>✦</i>
-        <span>Hinoko Labs</span><i>✦</i><span>独立系</span><i>✦</i><span>2026年設立</span><i>✦</i>
-        <span>Homu</span><i>✦</i><span>Kairo</span><i>✦</i>
-        <span>コーディングエージェント</span><i>✦</i><span>日本</span><i>✦</i>
-        <span>Hinoko Labs</span><i>✦</i><span>独立系</span><i>✦</i><span>2026年設立</span><i>✦</i>
-        <span>Homu</span><i>✦</i><span>Kairo</span><i>✦</i>
-        <span>コーディングエージェント</span><i>✦</i><span>日本</span><i>✦</i>
-        <span>Hinoko Labs</span><i>✦</i><span>独立系</span><i>✦</i><span>2026年設立</span><i>✦</i>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== About ===== -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-index">01</span>
-        <h2 class="section-label">私たちについて</h2>
-      </div>
-
-      <p class="manifesto">
-        <span class="reveal-line">多くのツールは、いま打っている行を補完するだけ。</span>
-        <span class="reveal-line">私たちは、<span class="accent">仕事を終わらせる道具</span>をつくる。</span>
-      </p>
-
-      <div class="about-grid">
-        <div class="about-copy reveal">
-          <p>Hinoko Labs は、日本を拠点とする独立系のものづくり集団です。オフィスも、投資家も、誰かに課された締め切りもありません。自分たちが本当に使いたい道具を、エンジニア・デザイナー・リサーチャーが自らの手でつくり、納得できたときに世に出します。</p>
-          <p>いま私たちが向き合っているのは、ただひとつの問い。「ソフトウェアが仕事をこなせるとき、働き方はどう変わるのか」。その答えとして、Homu と Kairo というふたつのプロダクトを並行して育てています。</p>
-        </div>
-
-        <dl class="about-facts reveal">
-          <div class="fact">
-            <dt>拠点</dt>
-            <dd>日本</dd>
-          </div>
-          <div class="fact">
-            <dt>形態</dt>
-            <dd>任意団体</dd>
-          </div>
-          <div class="fact">
-            <dt>領域</dt>
-            <dd>AIエージェント</dd>
-          </div>
-          <div class="fact">
-            <dt>プロダクト</dt>
-            <dd>Homu / Kairo</dd>
-          </div>
-        </dl>
-      </div>
-
-      <div class="principles">
-        <div class="principle reveal">
-          <span class="principle-num">a</span>
-          <h3>自分たちが使うものをつくる</h3>
-          <p>すべての機能は「昨日これが欲しかった」から始まります。自分たちが毎日手に取らないものは、出しません。</p>
-        </div>
-        <div class="principle reveal">
-          <span class="principle-num">b</span>
-          <h3>主導権は人にある</h3>
-          <p>計画し、書き、テストするのはエージェント。レビューし、判断し、コミットするのは人。この線引きは制約ではなく、設計です。</p>
-        </div>
-        <div class="principle reveal">
-          <span class="principle-num">c</span>
-          <h3>小さな火花が、次の火に</h3>
-          <p>炎から舞い上がる小さな火花。見落とすほど小さく、それでも次の火を起こすには十分。それが、私たちの道具論です。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Products ===== -->
-  <section class="section products" id="products">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-index">02</span>
-        <h2 class="section-label">プロダクト</h2>
-        <p class="section-note">ふたつの道具、ひとつのこだわり。仕事が本当に終わるかどうか。</p>
-      </div>
-
-      <!-- Homu -->
-      <article class="product reveal">
-        <div class="product-visual product-visual--homu">
-          <img src="assets/homu-logo.png" alt="Homu ロゴ" class="product-logo product-logo--homu">
-        </div>
-        <div class="product-body">
-          <header class="product-head">
-            <h3 class="product-name">Homu</h3>
-            <span class="status-tag">開発中</span>
-          </header>
-          <p class="product-type">実世界タスクエージェント</p>
-          <p class="product-desc">Homu は、自然言語のタスクを完成した成果物に変えます。ドキュメントを書き、スライドを組み、リサーチを回し、レポートをまとめる。最後に届くのは、すぐに使える成果物です。あなたは結果を伝えるだけ。手を動かすのは Homu です。</p>
-          <ul class="product-points">
-            <li>実世界の作業を担う — ドキュメント・スライド・リサーチ・レポート</li>
-            <li>計画・起草・推敲を終えてから報告</li>
-            <li>成果物はいつでもすぐ使える状態で届く</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Kairo -->
-      <article class="product product--flip reveal">
-        <div class="product-visual product-visual--kairo">
-          <img src="assets/kairo-logo.png" alt="Kairo ロゴ" class="product-logo product-logo--kairo">
-        </div>
-        <div class="product-body">
-          <header class="product-head">
-            <h3 class="product-name">Kairo</h3>
-            <span class="status-tag">開発中</span>
-          </header>
-          <p class="product-type">エディタ内コーディングエージェント</p>
-          <p class="product-desc">Kairo は、エディタの中であなたの隣で働きます。その場で補完し、リファクタリングし、コードを説明する。思考のスピードで。コミットの主導権は、常にあなたの手に。先を走る Homu に対して、Kairo は歩幅を合わせる相棒です。</p>
-          <ul class="product-points">
-            <li>インライン補完・リファクタリング・コード解説</li>
-            <li>エディタから離れない、コンテキストスイッチゼロ</li>
-            <li>コミットの決定権は常にあなたに</li>
-          </ul>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ===== Join ===== -->
-  <section class="section join" id="join">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-index">03</span>
-        <h2 class="section-label">仲間募集</h2>
-      </div>
-
-      <div class="join-intro reveal">
-        <h3 class="join-title">みんなで、ひとつの大きなものを。</h3>
-        <p class="join-text">私たちは企業ではないため、報酬をお支払いすることはできません。その代わりにあるのは、小さくても本気のチームと、みんなでまとまってつくり上げるひとつの大きなプロダクト。肩書きより、つくるものそのものに向き合いたい方を待っています。</p>
-      </div>
-
-      <ul class="role-list">
-        <li class="reveal"><a class="role-row" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
-          <span class="role-num">01</span>
-          <span class="role-name">ウェブデザイナー</span>
-          <span class="role-note">毎日使いたくなる画面をつくる</span>
-          <span class="role-arrow" aria-hidden="true">→</span>
-        </a></li>
-        <li class="reveal"><a class="role-row" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
-          <span class="role-num">02</span>
-          <span class="role-name">ブランドデザイナー</span>
-          <span class="role-note">Hinoko の顔と声をつくる</span>
-          <span class="role-arrow" aria-hidden="true">→</span>
-        </a></li>
-        <li class="reveal"><a class="role-row" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
-          <span class="role-num">03</span>
-          <span class="role-name">Webエンジニア</span>
-          <span class="role-note">フロントの磨き込みからバックエンドまで</span>
-          <span class="role-arrow" aria-hidden="true">→</span>
-        </a></li>
-        <li class="reveal"><a class="role-row" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
-          <span class="role-num">04</span>
-          <span class="role-name">macOS・iOSアプリエンジニア</span>
-          <span class="role-note">Apple プラットフォームに馴染むネイティブアプリ</span>
-          <span class="role-arrow" aria-hidden="true">→</span>
-        </a></li>
-        <li class="reveal"><a class="role-row" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
-          <span class="role-num">05</span>
-          <span class="role-name">Androidアプリエンジニア</span>
-          <span class="role-note">エージェントをすべてのポケットへ</span>
-          <span class="role-arrow" aria-hidden="true">→</span>
-        </a></li>
-        <li class="reveal"><a class="role-row role-row--special" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener">
-          <span class="role-num">06</span>
-          <span class="role-name">バイブコーダー</span>
-          <span class="role-note">おそらく業界初。エージェントと共につくる専任職</span>
-          <span class="role-arrow" aria-hidden="true">→</span>
-        </a></li>
+      <ul class="hero-index" aria-label="このページの内容">
+        <li><a href="#values"><span><b>価値観</b><small>私たちが大切にしている3つのこと。</small></span><i aria-hidden="true">↗</i></a></li>
+        <li><a href="#about"><span><b>私たちについて</b><small>2026年設立。オンラインで活動しています。</small></span><i aria-hidden="true">↗</i></a></li>
+        <li><a href="#careers"><span><b>仲間募集</b><small>6つの職種で募集しています。</small></span><i aria-hidden="true">↗</i></a></li>
+        <li><a href="#contact"><span><b>お問い合わせ</b><small>メールで受け付けています。</small></span><i aria-hidden="true">↗</i></a></li>
       </ul>
+    </section>
 
-      <div class="join-cta reveal">
-        <a href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener" class="btn btn-ink btn-lg">フォームから応募する</a>
-        <p class="join-cta-note">どの職種も同じフォームから。所要時間は5分ほどです。</p>
+    <div class="film container">
+      <div class="film-frame">
+        <video id="heroFilm" muted loop playsinline preload="metadata" poster="assets/hinoko-fire-poster.jpg" aria-hidden="true">
+          <source src="assets/hinoko-fire.mp4" type="video/mp4">
+        </video>
+        <p class="film-caption"><b>Hinoko</b><span>火の粉。炎から舞い上がる、小さな火。</span></p>
+        <button class="film-toggle" id="filmToggle" type="button" hidden>一時停止</button>
       </div>
     </div>
-  </section>
 
-  <!-- ===== Contact ===== -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-index">04</span>
-        <h2 class="section-label">連絡先</h2>
-      </div>
-      <div class="contact-body reveal">
-        <p class="contact-text">活動のこと、プロダクトのこと、それ以外のことでも。メッセージはすべて、人間が読んでいます。</p>
-        <a href="mailto:hellohinokolabs@miho.uk" class="contact-mail"><span>hellohinokolabs@miho.uk</span><i aria-hidden="true">↗</i></a>
-      </div>
-    </div>
-  </section>
+    <section class="section container" id="values" aria-labelledby="valuesTitle">
+      <header class="center-head">
+        <h2 id="valuesTitle">大切にしていること</h2>
+        <p>小さく、集中したチームです。<br>肩書きよりも、つくるものに向き合います。</p>
+      </header>
+      <ol class="values">
+        <li>
+          <span class="value-num">01</span>
+          <h3>自分たちが使うものをつくる</h3>
+          <p>すべては「これが欲しかった」という実感から始まります。自分たちで使い続けて、納得できたものだけを世に出します。</p>
+        </li>
+        <li>
+          <span class="value-num">02</span>
+          <h3>判断は、人に残す</h3>
+          <p>作業はAIに任せても、最後に確かめて決めるのは人です。その分担を前提に、道具を設計します。</p>
+        </li>
+        <li>
+          <span class="value-num">03</span>
+          <h3>小さな火から始める</h3>
+          <p>火の粉は小さくても、次の火を起こすには十分です。小さなチームで、確かなものを積み重ねていきます。</p>
+        </li>
+      </ol>
+    </section>
 
-</main>
-
-<!-- ===== Footer ===== -->
-<footer class="site-footer">
-  <div class="footer-media" aria-hidden="true">
-    <video autoplay muted loop playsinline preload="metadata"
-           poster="assets/hinoko-fire-poster.jpg"
-           src="assets/hinoko-fire.mp4"></video>
-    <div class="footer-shade"></div>
-  </div>
-
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-statement">
-        <p class="footer-line"><span class="nowrap">ソフトウェアの書かれ方を変える、</span><br>小さな道具をつくっています。</p>
-        <a href="mailto:hellohinokolabs@miho.uk" class="btn btn-solid footer-cta">連絡する</a>
-      </div>
-
-      <div class="footer-cols">
-        <div class="footer-col">
-          <p class="footer-col-head">ナビゲーション</p>
-          <a href="#about">私たちについて</a>
-          <a href="#products">プロダクト</a>
-          <a href="#join">仲間募集</a>
-          <a href="#contact">連絡先</a>
+    <section class="section container" id="about" aria-labelledby="aboutTitle">
+      <div class="split-head">
+        <div>
+          <p class="kicker">私たちについて</p>
+          <h2 id="aboutTitle">オフィスも、投資家もない。</h2>
+          <p class="lead">メンバーはそれぞれの場所から、オンラインで参加しています。誰かに課された締め切りではなく、自分たちの基準で開発を進めています。現在はふたつのソフトウェアを開発中です。</p>
         </div>
-        <div class="footer-col">
-          <p class="footer-col-head">プロダクト</p>
-          <a href="#products">Homu</a>
-          <a href="#products">Kairo</a>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-head">つながる</p>
-          <a href="#" rel="noopener">GitHub</a>
-          <a href="#" rel="noopener">X</a>
-          <a href="mailto:hellohinokolabs@miho.uk">メール</a>
-        </div>
-        <button type="button" class="to-top" id="toTop" aria-label="トップへ戻る">↑</button>
       </div>
-    </div>
+      <dl class="stats">
+        <div><dt>設立</dt><dd>2026</dd></div>
+        <div><dt>拠点</dt><dd>日本</dd></div>
+        <div><dt>募集中の職種</dt><dd>6</dd></div>
+      </dl>
+    </section>
 
-    <div class="footer-wordmark-row">
-      <img class="footer-flame" src="assets/hinoko-logo.png" alt="">
-      <p class="footer-wordmark" aria-hidden="true">Hinoko&nbsp;Labs</p>
-    </div>
+    <section class="section container" id="careers" aria-labelledby="careersTitle">
+      <header class="center-head">
+        <h2 id="careersTitle">一緒につくる仲間を募集しています</h2>
+        <p>どの職種も、同じフォームから応募できます。所要時間は5分ほどです。</p>
+      </header>
+      <div class="roles-wrap">
+        <p class="roles-year" aria-hidden="true">募集中</p>
+        <ul class="roles">
+          <li><a href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener noreferrer"><span>ウェブデザイナー</span><small>デザイン</small><span class="sr-only">（新しいタブ）</span></a></li>
+          <li><a href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener noreferrer"><span>ブランドデザイナー</span><small>デザイン</small><span class="sr-only">（新しいタブ）</span></a></li>
+          <li><a href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener noreferrer"><span>Webエンジニア</span><small>エンジニアリング</small><span class="sr-only">（新しいタブ）</span></a></li>
+          <li><a href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener noreferrer"><span>macOS・iOSアプリエンジニア</span><small>エンジニアリング</small><span class="sr-only">（新しいタブ）</span></a></li>
+          <li><a href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener noreferrer"><span>Androidアプリエンジニア</span><small>エンジニアリング</small><span class="sr-only">（新しいタブ）</span></a></li>
+          <li><a href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener noreferrer"><span>バイブコーダー</span><small>エンジニアリング</small><span class="sr-only">（新しいタブ）</span></a></li>
+        </ul>
+      </div>
+    </section>
 
-    <div class="footer-bottom">
-      <p>© 2026 Hinoko Labs — 日本</p>
-    </div>
-  </div>
-</footer>
+    <section class="section container" id="contact" aria-labelledby="contactTitle">
+      <header class="center-head">
+        <h2 id="contactTitle">はじめかた</h2>
+      </header>
+      <div class="paths">
+        <article class="path">
+          <h3>参加する</h3>
+          <p>ともに開発するメンバーとして。</p>
+          <ul>
+            <li>6つの職種で募集中</li>
+            <li>オンラインで参加</li>
+            <li>任意団体のため、現在の活動は無報酬です</li>
+          </ul>
+          <a class="button button-large button-block" href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener noreferrer">応募フォームを開く<span class="sr-only">（新しいタブ）</span></a>
+        </article>
+        <article class="path">
+          <h3>お問い合わせ</h3>
+          <p>活動についてのご質問やご相談。</p>
+          <ul>
+            <li>メールで受け付けています</li>
+            <li>すべてメンバーが目を通します</li>
+            <li>hellohinokolabs@miho.uk</li>
+          </ul>
+          <a class="button button-large button-block button-outline" href="mailto:hellohinokolabs@miho.uk">メールを送る</a>
+        </article>
+      </div>
+    </section>
+  </main>
 
-<script src="main.js"></script>
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <img src="assets/hinoko-logo-small.png" width="13" height="21" alt="">
+          <span>Hinoko Labs</span>
+        </a>
+        <p>© 2026 Hinoko Labs</p>
+      </div>
+      <nav class="footer-col" aria-label="団体">
+        <p>団体</p>
+        <a href="#values">価値観</a>
+        <a href="#about">私たちについて</a>
+        <a href="#careers">仲間募集</a>
+      </nav>
+      <nav class="footer-col" aria-label="連絡">
+        <p>連絡</p>
+        <a href="mailto:hellohinokolabs@miho.uk">メール</a>
+        <a href="status.html">ステータス</a>
+        <a href="https://forms.gle/MGa2NQpNaHNPS29Q9" target="_blank" rel="noopener noreferrer">応募フォーム<span class="sr-only">（新しいタブ）</span></a>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>

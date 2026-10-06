@@ -1,106 +1,53 @@
-/* Hinoko Labs — main.js */
+(() => {
+  'use strict';
+  const header = document.querySelector('.site-header');
+  const menuButton = document.querySelector('.menu-button');
+  const menu = document.getElementById('mobileMenu');
 
-(function () {
-  "use strict";
-
-  /* ---------- Helpers ---------- */
-  function playVideos(scope) {
-    (scope || document).querySelectorAll("video").forEach(function (video) {
-      var p = video.play();
-      if (p && p.catch) p.catch(function () { /* poster remains */ });
-    });
-  }
-
-  /* Wrap manifesto lines in an inner span so they can slide up from a mask. */
-  function wrapManifestoLines() {
-    document.querySelectorAll(".manifesto .reveal-line").forEach(function (line, i) {
-      if (line.querySelector(".rl-inner")) return;
-      var inner = document.createElement("span");
-      inner.className = "rl-inner";
-      inner.style.setProperty("--rl-delay", (i * 0.14) + "s");
-      while (line.firstChild) inner.appendChild(line.firstChild);
-      line.appendChild(inner);
-    });
-  }
-
-  wrapManifestoLines();
-
-  /* ---------- Header state on scroll ---------- */
-  var header = document.getElementById("siteHeader");
-  var ticking = false;
-
-  function onScroll() {
-    header.classList.toggle("scrolled", window.scrollY > 24);
-  }
-  window.addEventListener("scroll", function () {
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        onScroll();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-  onScroll();
-
-  /* ---------- Mobile menu ---------- */
-  var menuBtn = document.getElementById("menuBtn");
-  var mobileMenu = document.getElementById("mobileMenu");
-  if (menuBtn && mobileMenu) {
-    function closeMenu() {
-      mobileMenu.setAttribute("hidden", "");
-      menuBtn.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
-    }
-    menuBtn.addEventListener("click", function () {
-      var open = mobileMenu.hasAttribute("hidden");
-      if (open) {
-        mobileMenu.removeAttribute("hidden");
-        menuBtn.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden";
-      } else {
-        closeMenu();
-      }
-    });
-    mobileMenu.addEventListener("click", function (ev) {
-      if (ev.target.closest("a")) closeMenu();
-    });
-  }
-
-  /* ---------- Back to top ---------- */
-  var toTop = document.getElementById("toTop");
-  if (toTop) {
-    toTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-  /* ---------- Staggered reveal on scroll ---------- */
-  /* Siblings that reveal together cascade with a small delay. */
-  var parentMap = new Map();
-  document.querySelectorAll(".reveal").forEach(function (el) {
-    var p = el.parentElement;
-    if (!parentMap.has(p)) parentMap.set(p, 0);
-    var idx = parentMap.get(p);
-    el.style.setProperty("--reveal-delay", (idx * 0.1) + "s");
-    parentMap.set(p, idx + 1);
+  const setMenu = (open, restoreFocus = false) => {
+    menu.hidden = !open;
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    if (!open && restoreFocus) menuButton.focus();
+  };
+  menuButton.addEventListener('click', () => setMenu(menu.hidden));
+  menu.addEventListener('click', event => {
+    if (event.target.closest('a')) setMenu(false);
   });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !menu.hidden) setMenu(false, true);
+  });
+  document.addEventListener('click', event => {
+    if (!menu.hidden && !header.contains(event.target)) setMenu(false);
+  });
+  matchMedia('(min-width: 821px)').addEventListener('change', () => setMenu(false));
 
-  var revealEls = document.querySelectorAll(".reveal, .manifesto");
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
-    revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
-  }
+  let scheduled = false;
+  const updateHeader = () => {
+    header.classList.toggle('scrolled', window.scrollY > 4);
+    scheduled = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(updateHeader);
+  }, { passive: true });
+  updateHeader();
 
-  /* ---------- Keep videos playing ---------- */
-  playVideos();
+  // The film plays only while visible, and never when reduced motion is requested.
+  const film = document.getElementById('heroFilm');
+  const toggle = document.getElementById('filmToggle');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let userPaused = reduced.matches;
+  let inView = false;
+  const sync = () => {
+    if (!userPaused && inView) film.play().catch(() => {});
+    else film.pause();
+    toggle.textContent = userPaused ? '再生' : '一時停止';
+    toggle.setAttribute('aria-pressed', String(userPaused));
+  };
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => { userPaused = !userPaused; sync(); });
+  reduced.addEventListener('change', () => { userPaused = reduced.matches; sync(); });
+  new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; sync(); }).observe(film);
 })();

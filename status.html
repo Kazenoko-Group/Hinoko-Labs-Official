@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>ステータス — Hinoko Labs</title>
+  <meta name="description" content="Hinoko Labs の製品（Homu、Homu Pochi）の稼働状況です。">
+  <link rel="icon" type="image/png" href="assets/hinoko-favicon.png">
+  <link rel="preload" href="assets/fonts/geist-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="status-data.js"></script>
+  <script src="status.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="header-inner container">
+      <a class="brand" href="index.html" aria-label="Hinoko Labs トップ">
+        <img src="assets/hinoko-logo-small.png" width="13" height="21" alt="">
+        <span>Hinoko Labs</span>
+      </a>
+      <div class="header-actions">
+        <a class="button button-dark" href="index.html">トップへ戻る</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="status-page container" tabindex="-1">
+    <p class="kicker">ステータス</p>
+    <h1 class="status-title">製品の稼働状況</h1>
+
+    <section class="status-summary" id="summary" data-level="operational" aria-live="polite">
+      <span class="status-dot" aria-hidden="true"></span>
+      <p id="summaryText">稼働状況を読み込んでいます</p>
+      <p class="status-updated" id="updated"></p>
+    </section>
+
+    <section id="active" class="status-active" aria-label="対応中の障害"></section>
+
+    <section class="status-products" aria-labelledby="productsTitle">
+      <h2 class="sr-only" id="productsTitle">製品</h2>
+      <ul id="products"></ul>
+    </section>
+
+    <section class="status-history" aria-labelledby="historyTitle">
+      <h2 id="historyTitle">過去の障害</h2>
+      <ul id="history"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img src="assets/hinoko-logo-small.png" width="13" height="21" alt="">
+          <span>Hinoko Labs</span>
+        </a>
+        <p>© 2026 Hinoko Labs</p>
+      </div>
+      <nav class="footer-col" aria-label="団体">
+        <p>団体</p>
+        <a href="index.html#values">価値観</a>
+        <a href="index.html#about">私たちについて</a>
+        <a href="index.html#careers">仲間募集</a>
+      </nav>
+      <nav class="footer-col" aria-label="連絡">
+        <p>連絡</p>
+        <a href="mailto:hellohinokolabs@miho.uk">メール</a>
+        <a href="status.html" aria-current="page">ステータス</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
